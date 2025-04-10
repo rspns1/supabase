@@ -66,8 +66,30 @@
             </div>
 
             <div class="banner-right">
-                <img src="assets/image/banner.png" alt="">
+                <div class="slider">
+                    <div class="slide active"><img src="assets/image/banner.png" alt=""></div>
+                    <div class="slide"><img src="assets/image/Frame.png" alt=""></div>
+                    <div class="slide"><img src="assets/image/Frame.png" alt=""></div>
+                </div>
             </div>
+            <script>
+                const slides = document.querySelectorAll('.slide')
+                let currentIndex = 0
+        
+                function switchSlides() {
+                    slides[currentIndex].classList.remove('active')
+        
+                    currentIndex++
+        
+                    if (currentIndex >= slides.length) {
+                        currentIndex = 0
+                    }
+        
+                    slides[currentIndex].classList.add('active')
+                }
+        
+                setInterval(switchSlides, 1000)
+            </script>
         </div>
     </div>
 
@@ -170,6 +192,8 @@
                 </div>
         </div>
     </div>
+
+
 
     <footer class="footer container mt-140">
         <div class="footer-content">
